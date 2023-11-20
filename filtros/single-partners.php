@@ -61,7 +61,12 @@
                 <header class="entry-header">
                     <?php if (has_post_thumbnail()) : ?>
                         <div class="post-thumbnail">
-                            <?php the_post_thumbnail('medium'); ?>
+                            <?php 
+                                $website_data = get_post_meta(get_the_ID(), 'website', true);
+                                echo '<a href="' . $website_data['url'] . '">';
+                                the_post_thumbnail('medium'); 
+                                echo '</a>';
+                            ?>
                         </div>
                     <?php endif; ?>
                 </header>
