@@ -1,0 +1,223 @@
+.container {
+    max-width: 1080px;
+    margin: 0 auto;
+}
+
+.partners {
+    background-color: #380e8c;
+    padding: 30px;
+}
+
+.partners h1 {
+    color: #fff;
+    font-size: 28px;
+    font-weight: 800;
+    text-align: center;
+    font-family: Arial;
+}
+
+.partners p {
+    color: #fff;
+    font-size: 18px;
+    text-align: center;
+    font-family: Arial;
+}
+
+.partners #custom-search{
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    grid-gap: 30px;
+    align-items: center;
+}
+
+.partners #custom-search label {
+    color: #fff;
+    font-size: 16px;
+    font-family: Arial;
+}
+
+.partners #custom-search input,
+.partners #custom-search select,
+.partners #custom-search button {
+    appearance: none;
+    padding: 15px 20px;
+    border-radius: 40px;
+    width: 100%;
+    outline: none;
+    border: none;
+    margin-top:10px;
+    font-family: Arial;
+}
+
+.partners #custom-search input[type='text'] {
+    width: 100%;
+}
+
+.partners #custom-search input[type='submit'] {
+    margin-top: 26px;
+    color: #fff;
+    background-color: #000000;
+    text-align: center;
+    border-radius: 40px;
+    padding: 14px 10px;
+    font-family: Arial;
+}
+
+.cards-partners {
+    padding: 60px 0;
+}
+
+.cards-partners .result {
+    border: 1px solid rgba(0,0,0, 0.2);
+    border-radius: 18px;
+    font-family: Arial;
+}
+
+.cards-partners .custom-search-results {
+    display:grid;
+    grid-template-columns: repeat( 4, 1fr );
+    grid-gap: 15px;
+}
+
+.cards-partners .custom-search-results .result {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 8;
+    max-width: 250px;
+    
+}
+
+.cards-partners .custom-search-results .result .img {
+    height: 200px;
+    width: 150px;
+    background-size: contain;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+
+.cards-partners .custom-search-results .result .cta {
+    text-decoration: none;
+    margin-bottom: 10px;
+}
+
+
+.cards-partners .custom-search-results .result h2 {
+    color: #6e2dff;
+    text-align: center;
+    text-transform: capitalize;
+    margin: 0px;
+    overflow:hidden; 
+    text-overflow:ellipsis;
+    display:-webkit-box; 
+    -webkit-box-orient:vertical;
+    -webkit-line-clamp:2;
+    height: 60px;
+}
+
+.cards-partners .custom-search-results .result p {
+    margin: 5px 15px;
+    text-align: center;
+    text-transform: uppercase;
+}
+
+.cards-partners .custom-search-results .result p.excerpt {
+    font-size: 12px;
+    height: 55px;
+    max-width: 220px;
+}
+
+.cards-partners .custom-search-results .result p.country {
+    margin-bottom: 25px;
+}
+
+.cards-partners .custom-search-results .result ul {
+    padding: 0;
+}
+
+.cards-partners .custom-search-results .result ul li {
+    text-align: center;
+    margin-bottom: 5px;
+}
+
+.cards-partners .custom-search-results .result ul li::marker {
+    content: '';
+}
+
+
+.cards-partners .custom-search-results .result p.elipsis {
+    overflow:hidden; 
+    text-overflow:ellipsis;
+    display:-webkit-box; 
+    -webkit-box-orient:vertical;
+    -webkit-line-clamp:4;
+}
+
+.cards-partners .custom-search-results .result .separator {
+    width: 90%;
+    border-top: 1px solid rgba(0,0,0, 0.2);
+    margin: 15px 0px;
+}
+
+.single {
+    padding: 60px 0;
+    background-color: #cccccc;
+}
+
+.entry-content {
+    margin: 20px 0;
+    font-family: Arial;
+}
+
+.entry-content p {
+    font-size: 18px;
+    text-align: justify;
+}
+
+.entry-content h1 {
+    font-size: 28px;
+    margin-bottom: 35px;
+    text-align: center;
+}
+
+.entry-header {
+    max-width: 100%;
+    height: auto;
+}
+
+.post-meta li {
+    font-family: Arial, Helvetica, sans-serif;
+}
+.post-meta ul {
+    margin-left: 20px;
+}
+
+.back {
+    margin-bottom: 60px;
+}
+
+@media ( max-width: 1080px ) {
+    .cards-partners .custom-search-results,
+    .partners  #custom-search {
+        grid-template-columns: repeat( 2, 1fr );
+        align-items: center;
+    }
+    .result {
+        margin: auto;
+    }
+    
+    .container {
+        margin: 0 30px;
+    }
+}
+
+@media ( max-width: 767px ) {
+    .cards-partners .custom-search-results,
+    .partners #custom-search{
+        grid-template-columns: repeat( 1, 1fr );
+    }
+
+    #custom-search{
+        width: 100%;
+    }
+}

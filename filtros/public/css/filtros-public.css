@@ -1,0 +1,55 @@
+/**
+ * All of the CSS for your public-facing functionality should be
+ * included in this file.
+ */
+/* 
+ .custom-search-form form {
+    display: flex;
+    align-items: center;
+}
+
+.custom-search-form label,
+.custom-search-form select,
+.custom-search-form input {
+    margin-right: 10px;
+}
+
+#custom-search-results {
+    display: grid;
+    grid-template-columns: repeat(3,1fr);
+    grid-gap: 10px;
+}
+
+.result {
+    border: 1px solid rgba(0,0,0,.2);
+    text-align: center;
+    padding: 8;
+    max-width: 250px;
+}
+
+@media (max-width: 1080px){
+    #custom-search-results {
+        grid-template-columns: repeat(2,1fr);
+    }
+}
+@media (max-width: 767px){
+    #custom-search-results {
+        grid-template-columns: repeat(1,1fr);
+    }
+}
+
+#thumbnail {
+    max-width: 180px;
+    max-height: 150px;
+    margin-bottom: 10px;
+}
+
+.p-excerpt {
+    height: 50px;
+    overflow:hidden;
+    text-overflow:ellipsis;
+    display:-webkit-box;
+    -webkit-box-orient:vertical;
+    -webkit-line-clamp:4;
+}
+ */
