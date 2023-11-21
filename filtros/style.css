@@ -194,6 +194,30 @@
 
 .back {
     margin-bottom: 60px;
+    font-family: arial;
+}
+
+.single .relations {
+    border: 1px solid;
+    font-family: sans-serif;
+    padding: 5px;
+    border-radius: 5px;
+    
+}
+.single .relations .result-posts {
+    display: flex;
+    justify-content: space-around;
+
+}
+
+.single .relations .result-posts .result-cards {
+    text-align: center;
+
+}
+
+.single .relations .result-posts .result-cards img {
+    width: 110px;
+    height: 100px;
 }
 
 @media ( max-width: 1080px ) {

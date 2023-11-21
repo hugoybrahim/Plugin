@@ -86,7 +86,167 @@
         ?>
         <div id="custom-search-results" class="custom-search-results"></div>
         <?php
-    } else {
+    }else if (isset($_GET['country_id']))  {
+        $args = array(
+            'post_type' => 'partners',
+            'post_status' => 'publish',
+            'posts_per_page' => 100, 
+            'tax_query' => array(
+                array(
+                    'taxonomy' => 'country',
+                    'field' => 'id',
+                    'terms' => $_GET['country_id'],
+                ),
+            ),
+        );
+    
+        $query = new WP_Query($args);
+        ?>
+        <div id="custom-search-results" class="custom-search-results">
+            <?php
+            if ($query->have_posts()) {
+
+                while ($query->have_posts()) :
+                    $query->the_post();
+                    ?>   
+    
+                    <div class="result">
+                        
+                        <a href="<?php echo get_permalink() ?>">
+                            <div class="img" style="background-image: url( <?php echo get_the_post_thumbnail_url() ?>);">
+                            </div>
+                        </a>
+                        
+                        <h2>
+                            <a href="<?php echo get_permalink()?>" class="cta"><?php the_title(); ?></a>
+                        </h2>
+                        <p class="elipsis excerpt"><?php echo get_the_excerpt(); ?></p>
+                        <p>
+                            <?php
+                                $taxonomies = get_object_taxonomies('partners');
+                                
+                                foreach ($taxonomies as $taxonomy) {
+                                    $terms = wp_get_post_terms(get_the_ID(), $taxonomy);
+    
+                                    if (!empty($terms)) {
+                                        foreach ($terms as $term) {
+                                            if ($term->taxonomy == 'specialty') {
+                                                echo esc_html($term->name);
+                                            }
+                                        }
+                                    }
+                                }
+                            ?>  
+                        </p>
+                        <span class="separator"></span>
+                        <p class="country">
+                            <ul>
+                            <?php
+                                $taxonomies = get_object_taxonomies('partners');
+                                
+                                foreach ($taxonomies as $taxonomy) {
+                                    $terms = wp_get_post_terms(get_the_ID(), $taxonomy);
+    
+                                    if (!empty($terms)) {
+                                        foreach ($terms as $term) {
+                                            if ($term->taxonomy == 'country') {
+                                                echo '<li>' . esc_html($term->name) . '</li>';
+                                            }
+                                        }
+                                    }
+                                }
+                            ?>
+                            </ul>
+                        </p>
+                    </div>
+                    
+                    <?php
+                endwhile;
+                wp_reset_postdata();
+            } else {
+                echo 'No hay partners disponibles.';
+            }
+    }else if (isset($_GET['specialty_id']))  {
+        $args = array(
+            'post_type' => 'partners',
+            'post_status' => 'publish',
+            'posts_per_page' => 100, 
+            'tax_query' => array(
+                array(
+                    'taxonomy' => 'specialty',
+                    'field' => 'id',
+                    'terms' => $_GET['specialty_id'],
+                ),
+            ),
+        );
+    
+        $query = new WP_Query($args);
+        ?>
+        <div id="custom-search-results" class="custom-search-results">
+            <?php
+            if ($query->have_posts()) {
+
+                while ($query->have_posts()) :
+                    $query->the_post();
+                    ?>   
+    
+                    <div class="result">
+                        
+                        <a href="<?php echo get_permalink() ?>">
+                            <div class="img" style="background-image: url( <?php echo get_the_post_thumbnail_url() ?>);">
+                            </div>
+                        </a>
+                        
+                        <h2>
+                            <a href="<?php echo get_permalink()?>" class="cta"><?php the_title(); ?></a>
+                        </h2>
+                        <p class="elipsis excerpt"><?php echo get_the_excerpt(); ?></p>
+                        <p>
+                            <?php
+                                $taxonomies = get_object_taxonomies('partners');
+                                
+                                foreach ($taxonomies as $taxonomy) {
+                                    $terms = wp_get_post_terms(get_the_ID(), $taxonomy);
+    
+                                    if (!empty($terms)) {
+                                        foreach ($terms as $term) {
+                                            if ($term->taxonomy == 'specialty') {
+                                                echo esc_html($term->name);
+                                            }
+                                        }
+                                    }
+                                }
+                            ?>  
+                        </p>
+                        <span class="separator"></span>
+                        <p class="country">
+                            <ul>
+                            <?php
+                                $taxonomies = get_object_taxonomies('partners');
+                                
+                                foreach ($taxonomies as $taxonomy) {
+                                    $terms = wp_get_post_terms(get_the_ID(), $taxonomy);
+    
+                                    if (!empty($terms)) {
+                                        foreach ($terms as $term) {
+                                            if ($term->taxonomy == 'country') {
+                                                echo '<li>' . esc_html($term->name) . '</li>';
+                                            }
+                                        }
+                                    }
+                                }
+                            ?>
+                            </ul>
+                        </p>
+                    </div>
+                    
+                    <?php
+                endwhile;
+                wp_reset_postdata();
+            } else {
+                echo 'No hay partners disponibles.';
+            }
+    }else {
         $args = array(
             'post_type' => 'partners',
             'post_status' => 'publish',
